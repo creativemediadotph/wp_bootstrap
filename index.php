@@ -1,62 +1,31 @@
 <?php get_header(); ?>
-			
-			<?php
-				$blog_hero = of_get_option('blog_hero');
-				if ($blog_hero){
-			?>
-			<div class="clearfix row-fluid">
-				<div class="hero-unit">
-				
-					<h1><?php bloginfo('title'); ?></h1>
-					
-					<p><?php bloginfo('description'); ?></p>
-				
-				</div>
+
+	<div id="blog">
+		<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+		
+		<div class="post">
+		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		
+			<div class="entry">	
+				<?php the_post_thumbnail(); ?>
+				<?php the_content(); ?>
+
+				<p class="postmetadata">
+				<?php _e('Filed under&#58;'); ?> <?php the_category(', ') ?> <?php _e('by'); ?> <?php  the_author(); ?><br />
+				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit', ' &#124; ', ''); ?>
+				</p>
+
 			</div>
-			<?php
-				}
-			?>
-			
-			<div id="content" class="clearfix row-fluid">
-			
-				<div id="main" class="span8 clearfix" role="main">
+		</div>
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<?php get_template_part( 'content', get_post_format() ); ?>					
-					<?php endwhile; ?>	
-					
-					<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
-						
-						<?php page_navi(); // use the page navi function ?>
-						
-					<?php } else { // if it is disabled, display regular wp prev & next links ?>
-						<nav class="wp-prev-next">
-							<ul class="clearfix">
-								<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "bonestheme")) ?></li>
-								<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "bonestheme")) ?></li>
-							</ul>
-						</nav>
-					<?php } ?>		
-					
-					<?php else : ?>
-					
-					<article id="post-not-found">
-					    <header>
-					    	<h1><?php _e("Not Found", "bonestheme"); ?></h1>
-					    </header>
-					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?></p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-					
-					<?php endif; ?>
-			
-				</div> <!-- end #main -->
-    
-				<?php get_sidebar(); // sidebar 1 ?>
-    
-			</div> <!-- end #content -->
+		<?php endwhile; ?>
+		
+		<div class="navigation">
+		<?php posts_nav_link(); ?>
+		</div>
+		
+		<?php endif; ?>
+	</div>
 
+<?php get_sidebar(); ?>	
 <?php get_footer(); ?>

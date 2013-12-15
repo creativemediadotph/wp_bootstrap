@@ -1,8 +1,178 @@
 /*
-Theme Name: WP Bootstrap
-Theme URI: http://www.creativemedia.ph
-Description: A clean and minimal theme that is completely compatible with WordPress 3.8 and later. 
-Author: Alipio Gabriel
-Author URI: http://alipio.creativemedia.ph
+Theme Name: New WP 3.0
+Theme URI: http://onextrapixel.com
+Description: A completely WordPress 3.0 compatible theme.
+Author: Keenan Payne
+Author URI: http://slackrmedia.com
 Version: 1.0
 */
+
+
+body{
+	font-family: Arial, Helvetica, Georgia, Sans-serif;
+	font-size: 12px;
+	background: #d9d9d9;
+	color: #000000;
+}
+
+a:link, a:visited{
+	text-decoration: none; 
+	color: #000000;
+}
+
+a:hover{
+	color: #5f5f5f;
+}
+
+h1 {
+	font-size: 54px;
+}
+
+h3 {
+	font-size: 24px;
+}
+	
+#wrapper{
+	margin: 0 auto;
+	width: 750px;
+	text-align: left;
+	background: #fff;
+	padding: 20px;
+	
+}
+
+#header{
+	width: 750px;
+	height: 100px;
+}
+
+.nav{
+	width:750px;
+	background: #000;
+	display:block;
+	float:left;
+	position:relative;
+}
+
+.nav ul{
+	list-style:none;
+}
+
+.nav li{
+	float:left;
+	position:relative;
+}
+
+.nav a{
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	padding:0 15px 10px 0;
+	font-size:13px; 
+	font-weight:bold;
+}
+
+.nav ul ul{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	float:left;
+	z-index:99999;
+	background: #212121;
+}
+
+.nav ul ul ul{
+	top: 30%;
+	left:100%;
+	background: #343434;
+}
+
+.nav ul ul a{
+	height:auto;
+	line-height:1em;
+	padding:10px;
+	width:130px;
+}
+
+.nav li:hover > a,.nav ul ul:hover > a{
+	color:#ccc;
+}
+
+.nav ul li:hover > ul{
+	display:block;
+}
+
+
+#blog{
+	float: left;
+	width: 520px;
+	padding: 0 10px 10px 10px;
+}
+
+.sidebar{
+	float: left;
+	width: 200px;
+	margin: 0 0 0 10px;
+	font-size: 14px;
+	list-style: none;
+}
+
+#footer{
+	clear: both;
+	text-align: center;
+	height: 50px;
+	background: #ccc;
+	padding: 10px;
+}
+
+.gravatar{
+	float: right;
+}
+
+.comments-template{
+	margin: 10px 0 0;
+	padding: 30px 0 0;
+}
+
+.comments-template ol{
+	margin: 0;
+	padding: 0 0 15px;
+	list-style: none;
+}
+
+.comments-template ol li{
+	margin: 10px 0 0;
+	line-height: 18px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.comments-template textarea{
+	width: 500px;
+}
+
+.wp-caption {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; /* optional rounded corners for browsers that support it */
+  margin: 10px;
+  padding-top: 4px;
+  text-align: center;
+}
+
+.wp-caption img {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
